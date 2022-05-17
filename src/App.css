@@ -1,7 +1,12 @@
+
 .App {
     height: 100vh;
     width: 100vw;
-    background-color: gray;
+    background:
+        url('./Assets/backgroundPlaceholder.jpg')
+        no-repeat
+        center
+        rgb(0, 0, 0);
 }
 
 .App_Body {
@@ -10,4 +15,8 @@
         align-items: center;
     height: 100%;
     width: 100%;
+}
+
+.links {
+    text-decoration: none;
 }

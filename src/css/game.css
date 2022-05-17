@@ -1,0 +1,129 @@
+
+.gameCardImage{
+    height: 150px;
+    width: 250px;
+}
+
+/* GAME SEARCH */
+
+.gameSearchBaseContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.gameSearchContainer {
+    height: 80%;
+    width: 65%;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-evenly;
+        align-items: center;
+    border-radius: 10px;
+    border: solid rgb(20, 238, 220) 3px;
+    background-color: rgba(238, 238, 238, 0.45);
+}
+.gameSearchSecondaryContainer {
+    height: 85%;
+    width: 85%;
+    background-color: rgba(197, 197, 197, 0.816);
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+}
+
+.titleDivForGameSearch {
+    width: 40%;
+    color: rgb(20, 238, 220);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    display: flex;
+        justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.titleForGameSearch {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.gameSearchResults {
+    height: 75%;
+    width: 90%;
+    overflow-x: scroll;
+    background-color: rgba(45, 45, 45, 0.751);
+    border-radius: 10px;
+    display: flex;
+        align-items: center;
+}
+.gameSearchLoading {
+    height: 75%;
+    width: 90%;
+    overflow-x: scroll;
+    background-color: rgba(45, 45, 45, 0.751);
+    border-radius: 10px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+/* .gameSearchResults::-webkit-scrollbar {
+    display: none;
+} */
+
+.gameSearchPageBtnContainer{
+    width: 25%;
+    display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+}     
+
+.gameSearchPageBtns {
+    background-color: rgb(20, 238, 220) !important;
+    color:black !important;
+}
+
+/* GAME CARD */
+
+.gameCardContainer {
+    height: 80%;
+    margin: 10px;
+}
+
+.gameCard{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    /* background-color: red !important; */
+}
+
+.gameGenres {
+    height: 100%;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-around;
+}
+
+.gameGenre {
+    margin: 0;
+}
+
+.addGamePlatformsAndCategories{
+    display: flex;
+        justify-content: center;
+        justify-content: space-around;
+}
+
+/* .addGamePlatformCheckboxesContainer{
+
+}
+
+.addGameCategoriesCheckboxesContainer{
+
+} */

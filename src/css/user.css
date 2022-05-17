@@ -1,0 +1,117 @@
+
+.userBaseContainer {
+    /* background-color: red; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.userContainer {
+    height: 80%;
+    width: 65%;
+    border-radius: 10px;
+    border: solid rgb(20, 238, 220) 3px;
+    background-color: rgba(238, 238, 238, 0.45);
+}
+
+.userTitle {
+    width: 40%;
+    color: rgb(20, 238, 220);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    display: flex;
+        justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.userCategories {
+    height: 100%;
+}
+
+.userCategoryGameContainer_MyGames {
+    background-color: rgba(49, 49, 49, 0.7);
+    display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* justify-content: space-around; */
+    padding: 10px 0px 10px 0px;
+    overflow-x: scroll;
+    /* background-color: rgba(238, 238, 238, 0.45); */
+}
+
+.userCategoryGameContainerNoGames_MyGames {
+    background-color: rgba(49, 49, 49, 0.7);
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+    padding: 10px 0px 10px 0px;
+    overflow-x: scroll;
+    /* background-color: rgba(238, 238, 238, 0.45); */
+}
+
+.categoryContentContainer {
+    background-color: rgba(49, 49, 49, 0.7);
+}
+
+.userCategoryGameContainer {
+    /* background-color: rgba(49, 49, 49, 0.7); */
+    display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* justify-content: space-around; */
+    padding: 10px 0px 10px 0px;
+    overflow-x: scroll;
+    /* background-color: rgba(238, 238, 238, 0.45); */
+}
+
+.userCategoryGameContainerNoGames {
+    /* background-color: rgba(49, 49, 49, 0.7); */
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+    padding: 10px 0px 10px 0px;
+    overflow-x: scroll;
+    /* background-color: rgba(238, 238, 238, 0.45); */
+}
+
+.noGamesInCategory {
+    height: 150px;
+    width: 30%;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    padding-bottom: 10px;
+    background-color: rgb(244, 244, 244);
+    border: solid rgb(163, 11, 201) 3px;
+    border-radius: 10px;
+}
+
+.noUserGamesBtn {
+    background-color: rgb(20, 238, 220);
+    height: 100%;
+    width: 100%;
+    border: solid black 1.5px;
+    border-radius: 5px;
+}
+
+.addGameToCategoryInfo{
+    width: 80%;
+    text-align: center;
+}
+
+.categoryLink {
+    height: 25%;
+    width: 30%;
+}
+
+.addCategoryIconDiv {
+    /* background-color: red; */
+    height: 50px;
+    width: 50px;
+}
