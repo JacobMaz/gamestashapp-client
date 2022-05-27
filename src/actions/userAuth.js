@@ -1,12 +1,20 @@
-import axios from 'axios'
-import { error_alert, success_alert } from '../fetch/alerts'
-import { userRegisterFailure, userRegisterRequest, userRegisterSuccess } from "../fetch/user"
+import axios from 'axios';
+import { error_alert, success_alert } from '../fetch/alerts';
+import { userRegisterFailure, userRegisterRequest, userRegisterSuccess } from "../fetch/user";
+import emailjs from '@emailjs/browser';
 
 const userRegisterHeaders = {
     'Content-Type': 'application/json'
 }
 
+
+
 export const userAuth =(api, user)=>{
+
+    const sendEmailPlease=(emailInfo)=>{
+        emailjs.send('service_raempj7', 'template_bhmvjrx', emailInfo, '6evbxZ3vAU173qIAa');
+    }
+
     return function(dispatch){
         dispatch(userRegisterRequest())
         axios.post(api, user, {
@@ -15,6 +23,10 @@ export const userAuth =(api, user)=>{
             .then(res=>{
                 const data = res.data
                 dispatch(userRegisterSuccess(data))
+                if(data.status==='SUCCESS'){
+                    console.log(data.user.email, " : ", data.user.username)
+                    sendEmailPlease({to_email: data.user.email, to_name: data.user.username, my_html: '<h1>READY PLAYER ONE!</h1>'});
+                }
             })
             .catch(err=>{
                 // console.log('WHY???', err)

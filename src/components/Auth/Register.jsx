@@ -4,7 +4,7 @@ import { useState } from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { actions } from '../../actions';
-import { Snackbar, Alert } from '@mui/material'
+import { Snackbar, Alert } from '@mui/material';
 
 const Register = (props) => {
     const alerts = useSelector(state=>state.alerts)
@@ -137,7 +137,7 @@ const Register = (props) => {
                 <button type='submit' className='authSignUpLoginButtons'>Sign Up</button>
             </form>            
         </div>
-    
+
         <Snackbar open={alerts.openAlert} autoHideDuration={6000} onClose={handleCloseAlert} >
             <Alert severity={handleAlertSeverity()} >{handleAlertMessage()}</Alert>
         </Snackbar>
