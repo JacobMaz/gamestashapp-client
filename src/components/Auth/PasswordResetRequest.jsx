@@ -1,8 +1,10 @@
 
+import React from 'react';
 import { Alert, Snackbar } from '@mui/material';
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../actions';
+import APIURL from '../../helpers/environment';
 
 export const PasswordResetRequest = () => {
   const alerts = useSelector(state=>state.alerts)
@@ -14,7 +16,7 @@ export const PasswordResetRequest = () => {
     const sendPasswordResetRequest =(e)=>{
         e.preventDefault();
 
-        fetch("http://localhost:3069/user/resetpassword", {
+        fetch(`${APIURL}/user/resetpassword`, {
             method: "POST",
             body: JSON.stringify({
               email,

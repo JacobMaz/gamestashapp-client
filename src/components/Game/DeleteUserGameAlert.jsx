@@ -4,6 +4,7 @@ import React from 'react'
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from '@mui/material';
 import { actions } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
+import APIURL from '../../helpers/environment';
 
 export const DeleteUserGameAlert = (props) => {
     const token = useSelector(state=>state.user.user.sessionToken)
@@ -13,7 +14,7 @@ export const DeleteUserGameAlert = (props) => {
     const deleteGameFromStash =(e)=>{
         e.preventDefault();
 
-        fetch(`http://localhost:3069/game/${props.activeGame.id}`, {
+        fetch(`${APIURL}/game/${props.activeGame.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -24,7 +25,7 @@ export const DeleteUserGameAlert = (props) => {
                 .then(data=>{
                     console.log('data:',data)
                     if(data.status==='success'){
-                        dispatch(actions.getUserGames('http://localhost:3069/game/usergames', token))
+                        dispatch(actions.getUserGames(`${APIURL}/game/usergames`, token))
                     }
                 })
                     .catch(err=>console.log(err))

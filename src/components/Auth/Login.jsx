@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { Link } from "react-router-dom";
 import { Navigate } from 'react-router-dom';
 import { Alert, Snackbar } from '@mui/material';
+import APIURL from '../../helpers/environment';
 
 const Login = (props) => {
     const alerts = useSelector(state=>state.alerts)
@@ -23,7 +24,7 @@ const Login = (props) => {
     const handleSubmit=(e)=>{
         e.preventDefault();
 
-        dispatch(actions.userAuth('http://localhost:3069/user/login', JSON.stringify({
+        dispatch(actions.userAuth(`${APIURL}/user/login`, JSON.stringify({
             username: username.toLocaleLowerCase().replace(/ /g, "_"),
             password: password,
           })))

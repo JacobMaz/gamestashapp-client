@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { actions } from '../../actions'
 import { Snackbar, Alert } from '@mui/material'
 import '../../css/game.css'
+import APIURL from '../../helpers/environment'
 
 const GameCard = (props) => {
   const token = useSelector(state=>state.user.user.sessionToken)
@@ -98,7 +99,7 @@ const GameCard = (props) => {
   }
 
   const handleAddGame=()=>{
-    dispatch(actions.postUserGame(`http://localhost:3069/game/addgame`, {
+    dispatch(actions.postUserGame(`${APIURL}/game/addgame`, {
       name: props.game.name,
       platform: platforms,
       coverArt: props.game.background_image,

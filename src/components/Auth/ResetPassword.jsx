@@ -1,8 +1,11 @@
+
+import React from "react";
 import { useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../actions";
 import { Snackbar, Alert } from '@mui/material';
+import APIURL from "../../helpers/environment";
 
 export const ResetPassword = () => {
   const alerts = useSelector((state) => state.alerts);
@@ -41,7 +44,7 @@ export const ResetPassword = () => {
 
     if(passwordRequirement(passwordOne)){
       if(passwordOne===passwordTwo){
-        fetch('http://localhost:3069/user/newpassword', {
+        fetch(`${APIURL}/user/newpassword`, {
           method: 'POST',
           body: JSON.stringify({
             newPassword: passwordOne,
@@ -80,57 +83,6 @@ export const ResetPassword = () => {
         }))
       }
     }
-
-      // if (passwordRequirement(passwordOne)) {
-      //   if (passwordOne === passwordTwo) {
-      //     fetch("http://localhost:3069/user/newpassword", {
-      //       method: "POST",
-      //       body: JSON.stringify({
-      //         newPassword: passwordOne,
-      //         sentToken: token,
-      //       }),
-      //       headers: new Headers({
-      //         "Content-Type": "application/json",
-      //       }),
-      //     })
-      //       .then((res) => res.json())
-      //       .then((data) => {
-      //         switch (data.status) {
-      //           case "SUCCESS":
-      //             return dispatch(
-      //               actions.infoAlertAction({
-      //                 statusCode: 2,
-      //                 message: data.success,
-      //               })
-      //             );
-      //           case "ERROR":
-      //             return dispatch(
-      //               actions.alertAction(false, {
-      //                 statusCode: 1,
-      //                 message: data.error,
-      //               })
-      //             );
-      //           default:
-      //             return;
-      //         }
-
-      //         // if (data.status === "SUCCESS") {
-      //         //   // console.log('Password Changed')
-      //         // } else {
-      //         //   console.log("Password Not Changed");
-      //         // }
-      //       });
-      //   } else {
-      //     dispatch(
-      //       actions.alertAction(false, {
-      //         statusCode: 1,
-      //         message: "Passwords Do Not Match",
-      //       })
-      //     );
-      //     // console.log("ERROR: Password Does Not Match!");
-      //   }
-      // }
-
   };
 
   const handleCloseAlert =()=>{

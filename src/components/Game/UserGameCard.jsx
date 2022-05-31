@@ -5,6 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useDispatch, useSelector } from 'react-redux'
 import { actions } from '../../actions';
+import APIURL from '../../helpers/environment';
 
 const UserGameCard = (props) => {
   const token = useSelector(state=>state.user.user.sessionToken)
@@ -72,7 +73,7 @@ const UserGameCard = (props) => {
   }
 
   const handleAddGameToCategorySubmit=()=>{
-    dispatch(actions.postUserCategories(`http://localhost:3069/category/addgametocategory`, {
+    dispatch(actions.postUserCategories(`${APIURL}/category/addgametocategory`, {
       categoryId: categoriesSelection,
       gameId: game.id
     }, token))
@@ -81,10 +82,10 @@ const UserGameCard = (props) => {
   const handleRemoveGameFromCategory =(category)=>{
 
     if(category.name==='My Games'){
-      dispatch(actions.deleteGameFromMyGames(`http://localhost:3069/game/${game.id}`, token))
+      dispatch(actions.deleteGameFromMyGames(`${APIURL}/game/${game.id}`, token))
     } else {
       // console.log(`From ${category.name}`)
-      dispatch(actions.deleteGameFromCategory(`http://localhost:3069/category/removegamefromcategory`, {
+      dispatch(actions.deleteGameFromCategory(`${APIURL}/category/removegamefromcategory`, {
         categoryId: category.id,
         gameId: game.id
       }, token))

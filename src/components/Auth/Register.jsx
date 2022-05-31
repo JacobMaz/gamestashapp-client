@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { actions } from '../../actions';
 import { Snackbar, Alert } from '@mui/material';
+import APIURL from '../../helpers/environment';
 
 const Register = (props) => {
     const alerts = useSelector(state=>state.alerts)
@@ -44,7 +45,7 @@ const Register = (props) => {
 
                 if(passwordOne===passwordTwo){
                     
-                    dispatch(actions.userAuth('http://localhost:3069/user/register', JSON.stringify({
+                    dispatch(actions.userAuth(`${APIURL}/user/register`, JSON.stringify({
                                 email: email.toLocaleLowerCase(),
                                 username: username.toLocaleLowerCase().replace(/ /g, "_"),
                                 password: passwordOne,

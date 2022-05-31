@@ -43,7 +43,7 @@ export const fetchGamesFromAPIReducer =(state=initialState,action)=>{
     switch(action.type){
         case FETCH_GAMES_FROM_API_REQUEST:
             return {
-                ... state,
+                ...state,
                 loading: true
             }
         case FETCH_GAMES_FROM_API_SUCCESS:

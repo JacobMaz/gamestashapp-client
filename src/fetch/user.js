@@ -41,7 +41,7 @@ export const userReducer =(state=initialState,action)=>{
     switch(action.type){
         case USER_REGISTER_REQUEST:
             return {
-                ... state,
+                ...state,
                 loading: true
             }
         case USER_REGISTER_SUCCESS:

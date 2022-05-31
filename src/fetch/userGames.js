@@ -43,7 +43,7 @@ export const userGamesReducer =(state=initialState, action)=>{
     switch(action.type){
         case USER_GAMES_REQUEST:
             return {
-                ... state,
+                ...state,
                 loading: true
             }
         case USER_GAMES_SUCCESS:

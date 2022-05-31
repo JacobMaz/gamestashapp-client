@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 import { error_alert, success_alert } from '../fetch/alerts';
 import { userRegisterFailure, userRegisterRequest, userRegisterSuccess } from "../fetch/user";
@@ -12,7 +13,7 @@ const userRegisterHeaders = {
 export const userAuth =(api, user)=>{
 
     const sendEmailPlease=(emailInfo)=>{
-        emailjs.send('service_raempj7', 'template_bhmvjrx', emailInfo, '6evbxZ3vAU173qIAa');
+        emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, emailInfo, '6evbxZ3vAU173qIAa');
     }
 
     return function(dispatch){
@@ -24,12 +25,10 @@ export const userAuth =(api, user)=>{
                 const data = res.data
                 dispatch(userRegisterSuccess(data))
                 if(data.status==='SUCCESS'){
-                    console.log(data.user.email, " : ", data.user.username)
                     sendEmailPlease({to_email: data.user.email, to_name: data.user.username, my_html: '<h1>READY PLAYER ONE!</h1>'});
                 }
             })
             .catch(err=>{
-                // console.log('WHY???', err)
                 if(err.response.status===409){
                     dispatch(error_alert({
                         statusCode: 409,

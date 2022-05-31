@@ -6,6 +6,5 @@ export const appNavigationAction =(navigateTo)=>{
 }
 
 export const clearAppNavigation =()=>{
-    console.log('hello fran')
     return clear_app_navigation()
 }

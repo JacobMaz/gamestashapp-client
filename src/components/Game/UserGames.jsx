@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { actions } from '../../actions';
 
 import '../../css/user.css';
+import APIURL from '../../helpers/environment';
 import UserCategoryies from '../Categories/UserCategoryies';
 
 const UserGames = (props) => {
@@ -14,7 +15,7 @@ const UserGames = (props) => {
   const dispatch = useDispatch();
 
   useEffect(()=>{
-      dispatch(actions.getUserCategories('http://localhost:3069/category/usercategories', token))
+      dispatch(actions.getUserCategories(`${APIURL}/category/usercategories`, token))
   }, [])
 
   const handleCategoryDisplay=()=>{

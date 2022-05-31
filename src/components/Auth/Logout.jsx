@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom';
 import { actions } from '../../actions';
 import {useDispatch, useSelector} from 'react-redux';
+import APIURL from '../../helpers/environment';
 
 const Logout = (props) => {
     const user = useSelector(state=>state.user.user)
@@ -21,7 +22,7 @@ const Logout = (props) => {
     const handleDeleteUser =(e)=>{
       e.preventDefault();
 
-      dispatch(actions.deleteUser(`http://localhost:3069/user/${user.user.id}`, user.sessionToken))
+      dispatch(actions.deleteUser(`${APIURL}/user/${user.user.id}`, user.sessionToken))
     }
 
     if(!props.isLoggedIn){

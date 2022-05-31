@@ -1,6 +1,7 @@
 
 import axios from 'axios'
 import { userCategoriesRequest, userCategoriesSuccess } from '../fetch/userCategories'
+import APIURL from '../helpers/environment'
 import { getUserCategories } from './getUserCategories'
 
 
@@ -20,7 +21,7 @@ export const putCategoryUser = (api, category, token) => {
                 const data=res.data
                 dispatch(userCategoriesSuccess(data))
             })
-                .then(res=>{dispatch(getUserCategories(`http://localhost:3069/category/usercategories`, token))})
+                .then(res=>{dispatch(getUserCategories(`${APIURL}/category/usercategories`, token))})
             .catch(err=>{
                 console.log(err)
             })

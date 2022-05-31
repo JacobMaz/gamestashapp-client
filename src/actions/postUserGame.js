@@ -17,7 +17,6 @@ export const postUserGame=(api, game, token)=>{
         })
             .then(res=>{
                 const data=res.data
-                // console.log('DATA:', data.message)
                 dispatch(userGamesSuccess(data))
                 dispatch(success_alert(data.message))
             })

@@ -41,7 +41,7 @@ export const userCategoriesReducer =(state=initialState, action)=>{
     switch(action.type){
         case USER_CATEGORIES_REQUEST:
             return {
-                ... state,
+                ...state,
                 loading: true
             }
         case USER_CATEGORIES_SUCCESS:

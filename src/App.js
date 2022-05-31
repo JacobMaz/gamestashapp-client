@@ -1,4 +1,5 @@
 
+import React from 'react';
 import './App.css';
 import './css/nav.css'
 import TopNav from './components/Nav/TopNav';
@@ -16,7 +17,7 @@ import GamesSearch from './components/Game/GamesSearch';
 function App() {
   const isLoggedIn = useSelector(state=>state.user.isLoggedIn)
   const user = useSelector(state=>state.user.user)
-
+  
   return (
     <div className="App">
       <Router>

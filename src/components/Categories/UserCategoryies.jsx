@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { actions } from '../../actions';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import APIURL from '../../helpers/environment';
 
 const UserCategoryies = (props) => {
   const token = useSelector(state=>state.user.user.sessionToken);
@@ -75,7 +76,7 @@ const UserCategoryies = (props) => {
 
   const handleAddCategorySubmit=()=>{
     if(categoryName!=='My Games'){
-      dispatch(actions.postUserCategories(`http://localhost:3069/category/createcategory`, {name: categoryName}, token))
+      dispatch(actions.postUserCategories(`${APIURL}/category/createcategory`, {name: categoryName}, token))
     } else {
       console.log('Cannot Name Category "My Games"')
     }
@@ -84,11 +85,11 @@ const UserCategoryies = (props) => {
   const handleEditCategory =()=>{
 
     // console.log('edit cat: ', activeCategoryId)
-    dispatch(actions.putCategoryUser(`http://localhost:3069/category/${activeCategoryId}`, {name: newCategoryName}, token))
+    dispatch(actions.putCategoryUser(`${APIURL}/category/${activeCategoryId}`, {name: newCategoryName}, token))
   }
 
   const handleDeleteCategory =()=>{
-    dispatch(actions.deleteCategory(`http://localhost:3069/category/${activeCategoryId}`, token))
+    dispatch(actions.deleteCategory(`${APIURL}/category/${activeCategoryId}`, token))
   }
 
   const handleUserCategoriesAccordionDisplay=()=>{
